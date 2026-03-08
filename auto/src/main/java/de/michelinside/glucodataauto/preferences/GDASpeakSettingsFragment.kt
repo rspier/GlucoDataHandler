@@ -24,8 +24,8 @@ class GDASpeakSettingsFragment: SettingsFragmentBase(R.xml.pref_gda_speak) {
                 CarMediaPlayer.play(requireContext())
             } else {
                 var text = ReceiveData.getAsText(requireContext(), true, false)
-                if(!GlucoDataServiceAuto.patientName.isNullOrEmpty()) {
-                    text = "${GlucoDataServiceAuto.patientName}, $text"
+                if(!de.michelinside.glucodatahandler.common.GlucoDataService.patientName.isNullOrEmpty()) {
+                    text = "${de.michelinside.glucodatahandler.common.GlucoDataService.patientName}, $text"
                 }
                 TextToSpeechUtils.speak(text)
             }

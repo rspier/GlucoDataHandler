@@ -222,6 +222,12 @@ object Constants {
     const val SHARED_PREF_NIGHTSCOUT_TOKEN="src_ns_token"
     const val SHARED_PREF_NIGHTSCOUT_IOB_COB="src_ns_iob_cob"
 
+    const val SHARED_PREF_MQTT_ENABLED="source_mqtt_enabled"
+    const val SHARED_PREF_MQTT_URL="source_mqtt_url"
+    const val SHARED_PREF_MQTT_USER="source_mqtt_user"
+    const val SHARED_PREF_MQTT_PASSWORD="source_mqtt_password"
+    const val SHARED_PREF_MQTT_TOPIC="source_mqtt_topic"
+
     const val SHARED_PREF_MEDTRUM_ENABLED="source_medtrum_enabled"
     const val SHARED_PREF_MEDTRUM_USER="source_medtrum_user"
     const val SHARED_PREF_MEDTRUM_PASSWORD="source_medtrum_password"

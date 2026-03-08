@@ -45,6 +45,12 @@
             android:summary="@string/src_ns_summary"
             app:fragment="de.michelinside.glucodatahandler.common.preferences.SourceNightscout"
             app:iconSpaceReserved="false" />
+        <Preference
+            android:key="source_mqtt_enabled"
+            android:title="@string/src_cat_mqtt"
+            android:summary="@string/src_mqtt_summary"
+            app:fragment="de.michelinside.glucodatahandler.common.preferences.SourceMqtt"
+            app:iconSpaceReserved="false" />
     </PreferenceCategory>
 
 </PreferenceScreen>
