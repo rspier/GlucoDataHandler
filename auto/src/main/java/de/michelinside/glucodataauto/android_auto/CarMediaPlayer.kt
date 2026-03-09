@@ -152,8 +152,8 @@ object CarMediaPlayer: NotifierInterface {
             var requestAudioFocus = false
             if(!playSilent) {
                 var text = ReceiveData.getAsText(context, true, false)
-                if(!de.michelinside.glucodatahandler.common.GlucoDataService.patientName.isNullOrEmpty()) {
-                    text = "${de.michelinside.glucodatahandler.common.GlucoDataService.patientName}, $text"
+                if(!GlucoDataServiceAuto.patientName.isNullOrEmpty()) {
+                    text = "${GlucoDataServiceAuto.patientName}, $text"
                 }
                 file = TextToSpeechUtils.getAsFile(text, context)
                 if(file != null) {

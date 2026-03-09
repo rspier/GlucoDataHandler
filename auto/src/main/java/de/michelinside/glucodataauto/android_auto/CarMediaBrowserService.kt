@@ -353,8 +353,8 @@ class CarMediaBrowserService: MediaBrowserServiceCompat(), NotifierInterface, Sh
                 title = title.trim()
             }
             var subtitle = ""
-            if(!de.michelinside.glucodatahandler.common.GlucoDataService.patientName.isNullOrEmpty())
-                subtitle += de.michelinside.glucodatahandler.common.GlucoDataService.patientName + " - "
+            if(!GlucoDataServiceAuto.patientName.isNullOrEmpty())
+                subtitle += GlucoDataServiceAuto.patientName + " - "
             subtitle += "🕒 " + ReceiveData.getElapsedTimeMinuteAsString(this)
 
             session.setMetadata(

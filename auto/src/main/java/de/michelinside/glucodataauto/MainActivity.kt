@@ -590,8 +590,8 @@ class MainActivity : AppCompatActivity(), NotifierInterface {
 
     private fun updateDetailsTable() {
         tableDetails.removeViews(1, maxOf(0, tableDetails.childCount - 1))
-        if(!de.michelinside.glucodatahandler.common.GlucoDataService.patientName.isNullOrEmpty()) {
-            tableDetails.addView(createRow(CR.string.patient_name, de.michelinside.glucodatahandler.common.GlucoDataService.patientName!!))
+        if(!GlucoDataServiceAuto.patientName.isNullOrEmpty()) {
+            tableDetails.addView(createRow(CR.string.patient_name, GlucoDataServiceAuto.patientName!!))
         }
 
         if(ReceiveData.time > 0) {

@@ -308,8 +308,8 @@ object CarNotification: NotifierInterface, SharedPreferences.OnSharedPreferenceC
         messagingStyle.conversationTitle = title
         messagingStyle.isGroupConversation = false
         var message = ""
-        if(!de.michelinside.glucodatahandler.common.GlucoDataService.patientName.isNullOrEmpty()) {
-            message += de.michelinside.glucodatahandler.common.GlucoDataService.patientName + " - "
+        if(!GlucoDataServiceAuto.patientName.isNullOrEmpty()) {
+            message += GlucoDataServiceAuto.patientName + " - "
         }
         message += "🕒 " + DateFormat.getTimeInstance(DateFormat.SHORT).format(Date(ReceiveData.time))
         messagingStyle.addMessage(message, System.currentTimeMillis(), person)
