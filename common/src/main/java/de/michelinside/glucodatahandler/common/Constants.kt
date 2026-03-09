@@ -222,12 +222,6 @@ object Constants {
     const val SHARED_PREF_NIGHTSCOUT_TOKEN="src_ns_token"
     const val SHARED_PREF_NIGHTSCOUT_IOB_COB="src_ns_iob_cob"
 
-    const val SHARED_PREF_MQTT_ENABLED="source_mqtt_enabled"
-    const val SHARED_PREF_MQTT_URL="source_mqtt_url"
-    const val SHARED_PREF_MQTT_USER="source_mqtt_user"
-    const val SHARED_PREF_MQTT_PASSWORD="source_mqtt_password"
-    const val SHARED_PREF_MQTT_TOPIC="source_mqtt_topic"
-
     const val SHARED_PREF_MEDTRUM_ENABLED="source_medtrum_enabled"
     const val SHARED_PREF_MEDTRUM_USER="source_medtrum_user"
     const val SHARED_PREF_MEDTRUM_PASSWORD="source_medtrum_password"
@@ -331,6 +325,12 @@ object Constants {
     const val SHARED_PREF_SHOW_BATTERY_PERCENT = "battery_show_percent"
     const val SHARED_PREF_SEND_TO_WATCH_INTERVAL = "send_to_watch_interval"
     const val SHARED_PREF_SEND_TO_RECEIVER_INTERVAL = "send_to_receiver_interval"
+
+    const val SHARED_PREF_MQTT_SEND_ENABLED = "mqtt_send_enabled"
+    const val SHARED_PREF_MQTT_SEND_URL = "mqtt_send_url"
+    const val SHARED_PREF_MQTT_SEND_USER = "mqtt_send_user"
+    const val SHARED_PREF_MQTT_SEND_PASSWORD = "mqtt_send_password"
+    const val SHARED_PREF_MQTT_SEND_TOPIC = "mqtt_send_topic"
 
     const val SHARED_PREF_PHONE_WEAR_SCREEN_OFF_UPDATE = "phone_wear_screen_off_update"
 

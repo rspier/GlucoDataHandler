@@ -20,8 +20,7 @@ enum class DataSource(val resId: Int, val interval5Min: Boolean = false) {
     DIABOX(R.string.source_diabox),
     LIBRE_PATCHED(R.string.source_libre_patched),
     NOTIFICATION(R.string.source_notification),
-    NOTIFICATION_IOB(R.string.source_iob_notification),
-    MQTT(R.string.src_cat_mqtt);
+    NOTIFICATION_IOB(R.string.source_iob_notification);
 
     companion object {
         fun fromIndex(idx: Int): DataSource {

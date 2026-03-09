@@ -51,7 +51,6 @@ class SourceOnlineFragment : PreferenceFragmentCompatBase(), SharedPreferences.O
                 setListSummary(Constants.SHARED_PREF_SOURCE_INTERVAL, R.string.source_interval_summary)
             }
         }
-
     }
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String?) {
         Log.d(LOG_ID, "onSharedPreferenceChanged called for " + key)
@@ -444,17 +443,6 @@ class SourceNightscout : SourceOnlineFragmentBase(R.xml.source_nightscout) {
 
     override fun update() {
         setSummary(Constants.SHARED_PREF_NIGHTSCOUT_URL, R.string.src_ns_url_summary)
-    }
-
-}
-
-class SourceMqtt : SourceOnlineFragmentBase(R.xml.source_mqtt) {
-    override fun getPasswordPref(): String = Constants.SHARED_PREF_MQTT_PASSWORD
-
-    override fun update() {
-        setSummary(Constants.SHARED_PREF_MQTT_URL, R.string.src_mqtt_url_summary)
-        setSummary(Constants.SHARED_PREF_MQTT_TOPIC, R.string.src_mqtt_topic_summary)
-        setSummary(Constants.SHARED_PREF_MQTT_USER, R.string.src_mqtt_user_summary)
     }
 
 }
