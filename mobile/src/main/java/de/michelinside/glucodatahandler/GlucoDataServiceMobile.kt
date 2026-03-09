@@ -31,6 +31,10 @@ import de.michelinside.glucodatahandler.widget.LockScreenWallpaper
 import de.michelinside.glucodatahandler.xdripserver.XDripServer
 import java.math.RoundingMode
 import androidx.core.content.edit
+import androidx.work.ExistingWorkPolicy
+import androidx.work.OneTimeWorkRequest
+import androidx.work.WorkManager
+import de.michelinside.glucodatahandler.common.tasks.MqttWorker
 
 
 class GlucoDataServiceMobile: GlucoDataService(AppSource.PHONE_APP), NotifierInterface {
@@ -443,6 +447,12 @@ class GlucoDataServiceMobile: GlucoDataService(AppSource.PHONE_APP), NotifierInt
             val intent = Intent(Constants.GLUCODATA_BROADCAST_ACTION)
             intent.putExtras(extras)
             sendBroadcast(intent, Constants.SHARED_PREF_GLUCODATA_RECEIVERS, context, sharedPref)
+        }
+
+        if (sharedPref.getBoolean(Constants.SHARED_PREF_MQTT_SEND_ENABLED, false)) {
+            Log.d(LOG_ID, "Enqueue MQTT publish worker")
+            val workRequest = OneTimeWorkRequest.Builder(MqttWorker::class.java).build()
+            WorkManager.getInstance(context).enqueueUniqueWork("mqtt_publish", ExistingWorkPolicy.REPLACE, workRequest)
         }
     }
 

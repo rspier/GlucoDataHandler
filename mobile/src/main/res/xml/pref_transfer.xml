@@ -52,6 +52,41 @@
             app:iconSpaceReserved="false" />
     </PreferenceCategory>
     <PreferenceCategory
+        android:title="@string/src_cat_mqtt"
+        app:iconSpaceReserved="false">
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="mqtt_send_enabled"
+            android:summary="@string/mqtt_send_enabled_summary"
+            android:title="@string/mqtt_send_enabled"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:defaultValue=""
+            android:key="mqtt_send_url"
+            android:title="@string/mqtt_send_url"
+            android:summary="@string/mqtt_send_url_summary"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:defaultValue=""
+            android:key="mqtt_send_topic"
+            android:title="@string/mqtt_send_topic"
+            android:summary="@string/mqtt_send_topic_summary"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:defaultValue=""
+            android:key="mqtt_send_user"
+            android:title="@string/mqtt_send_user"
+            android:summary="@string/mqtt_send_user_summary"
+            app:iconSpaceReserved="false" />
+        <androidx.preference.EditTextPreference
+            android:defaultValue=""
+            android:key="mqtt_send_password"
+            android:title="@string/mqtt_send_password"
+            android:summary="@string/mqtt_send_password_summary"
+            android:inputType="textPassword"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+    <PreferenceCategory
         android:title="@string/advanced_settings"
         app:iconSpaceReserved="false">
             <androidx.preference.SeekBarPreference

@@ -326,6 +326,12 @@ object Constants {
     const val SHARED_PREF_SEND_TO_WATCH_INTERVAL = "send_to_watch_interval"
     const val SHARED_PREF_SEND_TO_RECEIVER_INTERVAL = "send_to_receiver_interval"
 
+    const val SHARED_PREF_MQTT_SEND_ENABLED = "mqtt_send_enabled"
+    const val SHARED_PREF_MQTT_SEND_URL = "mqtt_send_url"
+    const val SHARED_PREF_MQTT_SEND_USER = "mqtt_send_user"
+    const val SHARED_PREF_MQTT_SEND_PASSWORD = "mqtt_send_password"
+    const val SHARED_PREF_MQTT_SEND_TOPIC = "mqtt_send_topic"
+
     const val SHARED_PREF_PHONE_WEAR_SCREEN_OFF_UPDATE = "phone_wear_screen_off_update"
 
     const val SHARED_PREF_DISCLAIMER_SHOWN = "gdh_disclaimer_shown"

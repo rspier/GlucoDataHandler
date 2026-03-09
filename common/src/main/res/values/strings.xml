@@ -995,6 +995,18 @@ You can manage these permissions at any time in the Health Connect app settings.
     <string name="src_dexcom_share_summary">Remotely follow Dexcom app.</string>
     <string name="src_medtrum_summary">Remotely follow Medtrum app.</string>
     <string name="src_ns_summary">Remotely follow Nightscout web service.</string>
+
+    <string name="src_cat_mqtt" translatable="false">MQTT</string>
+    <string name="mqtt_send_enabled" translatable="false">Send to MQTT</string>
+    <string name="mqtt_send_enabled_summary" translatable="false">Send data to MQTT broker</string>
+    <string name="mqtt_send_url" translatable="false">Broker URL</string>
+    <string name="mqtt_send_url_summary" translatable="false">TCP or SSL URL (e.g., tcp://broker.hivemq.com:1883 or ssl://yourbroker:8883)</string>
+    <string name="mqtt_send_user" translatable="false">Username</string>
+    <string name="mqtt_send_user_summary" translatable="false">Username for authentication</string>
+    <string name="mqtt_send_password" translatable="false">Password</string>
+    <string name="mqtt_send_password_summary" translatable="false">Password for authentication</string>
+    <string name="mqtt_send_topic" translatable="false">Topic</string>
+    <string name="mqtt_send_topic_summary" translatable="false">MQTT topic to publish to</string>
     <string name="pref_cat_wear_os_summary">For Wear OS watches, e.g., all Google Pixel Watches, Samsung Galaxy Watch 4 and newer, and many others.</string>
     <string name="pref_cat_watchdrip_summary">For watches supported by the external WatchDrip+ app, such as most Mi Band, Xiaomi Smart Band and Amazfit models.</string>
     <string name="pref_cat_garminpebble_summary">For devices and apps that can receive glucose data from xDrip+ web service, such as Garmin, Pebble, and some Fitbit watches.</string>
