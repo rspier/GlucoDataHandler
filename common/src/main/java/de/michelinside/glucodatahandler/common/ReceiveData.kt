@@ -12,7 +12,6 @@ import de.michelinside.glucodatahandler.common.notification.AlarmNotificationBas
 import de.michelinside.glucodatahandler.common.notification.AlarmType
 import de.michelinside.glucodatahandler.common.notifier.*
 import de.michelinside.glucodatahandler.common.notifier.DataSource
-import de.michelinside.glucodatahandler.common.receiver.ScreenEventReceiver
 import de.michelinside.glucodatahandler.common.tasks.ElapsedTimeTask
 import de.michelinside.glucodatahandler.common.tasks.TimeTaskService
 import de.michelinside.glucodatahandler.common.utils.GlucoDataUtils
@@ -84,11 +83,6 @@ object ReceiveData: SharedPreferences.OnSharedPreferenceChangeListener {
     }
     val forceAlarm: Boolean get() {
         return (forceGlucoseAlarm || forceDeltaAlarm)
-    }
-
-    var forceObsoleteOnScreenOff: Boolean = false
-    private val forceObsolete: Boolean get() {
-        return forceObsoleteOnScreenOff && ScreenEventReceiver.isDisplayOff()
     }
 
     var iob: Float = Float.NaN
@@ -247,8 +241,8 @@ object ReceiveData: SharedPreferences.OnSharedPreferenceChangeListener {
 
     fun isObsoleteTime(timeoutSec: Int): Boolean = (System.currentTimeMillis()- time) >= (timeoutSec * 1000)
 
-    fun isObsoleteShort(): Boolean = forceObsolete || isObsoleteTime(obsoleteTimeMin*60)
-    fun isObsoleteLong(): Boolean = forceObsolete || isObsoleteTime(obsoleteTimeMin*120)
+    fun isObsoleteShort(): Boolean = isObsoleteTime(obsoleteTimeMin*60)
+    fun isObsoleteLong(): Boolean = isObsoleteTime(obsoleteTimeMin*120)
     fun isIobCobObsolete(timeoutSec: Int = Constants.VALUE_IOB_COBOBSOLETE_SEC): Boolean = (System.currentTimeMillis()- iobCobTime) >= (timeoutSec * 1000)
 
     fun getGlucoseAsString(): String {
@@ -580,7 +574,7 @@ object ReceiveData: SharedPreferences.OnSharedPreferenceChangeListener {
     }
 
     fun getElapsedTimeMinuteAsString(context: Context, short: Boolean = true): String {
-        if (time == 0L || forceObsolete)
+        if (time == 0L)
             return "--"
         return if (ElapsedTimeTask.relativeTime) {
             getElapsedRelativeTimeAsString(context)
@@ -610,7 +604,6 @@ object ReceiveData: SharedPreferences.OnSharedPreferenceChangeListener {
         if (extras == null || extras.isEmpty) {
             return false
         }
-        forceObsoleteOnScreenOff = false
         var result = false
         WakeLockHelper(context).use {
             initData(context)
